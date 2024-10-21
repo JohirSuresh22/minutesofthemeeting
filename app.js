@@ -32,7 +32,7 @@ function downloadMinutes() {
     for (let i = 0; i < minutesSection.length; i++) {
         const timeLabel = minutesSection[i].querySelector('label').innerText;
         const minuteText = minutesSection[i].querySelector('textarea').value;
-        content += `${timeLabel}\nMinute: ${minuteText}\n\n`;
+        content += `${timeLabel}\nMeeting Point: ${minuteText}\n\n`;
     }
 
     // Convert content to a Blob and download as a Word document

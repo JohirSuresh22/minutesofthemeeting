@@ -10,7 +10,7 @@ function addMinute() {
     // Create a container for each minute
     const minuteContainer = document.createElement('div');
     const timestamp = getCurrentDateTime();
-    
+
     // Time display
     const timeLabel = document.createElement('label');
     timeLabel.innerText = `Time: ${timestamp}`;
@@ -19,14 +19,16 @@ function addMinute() {
     // Textbox for entering minute
     const minuteInput = document.createElement('textarea');
     minuteInput.placeholder = "Enter minutes here...";
+
+    // Add keydown event listener for the "Enter" key
     minuteInput.addEventListener('keydown', function(event) {
         if (event.key === "Enter") {
-            event.preventDefault(); // Prevents creating a new line
-            addMinute(); // Add a new minute on pressing "Enter"
+            event.preventDefault();  // Prevent adding a new line
+            addMinute();  // Add a new minute input box
         }
     });
-    minuteContainer.appendChild(minuteInput);
 
+    minuteContainer.appendChild(minuteInput);
     minutesSection.appendChild(minuteContainer);
 
     // Automatically focus on the new text area
@@ -41,7 +43,7 @@ function downloadMinutes() {
     for (let i = 0; i < minutesSection.length; i++) {
         const timeLabel = minutesSection[i].querySelector('label').innerText;
         const minuteText = minutesSection[i].querySelector('textarea').value;
-        content += `${timeLabel}\nMinute Content: ${minuteText}\n\n`;
+        content += `${timeLabel}\nMinute: ${minuteText}\n\n`;
     }
 
     // Convert content to a Blob and download as a Word document
@@ -54,5 +56,5 @@ function downloadMinutes() {
 
 // Automatically add the first minute input field when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    addMinute();
+    addMinute();  // Add the initial minute field
 });

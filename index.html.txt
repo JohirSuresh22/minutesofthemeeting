@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minutes of the Meeting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, textarea {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            max-width: 600px;
+        }
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Minutes of the Meeting</h1>
+
+    <label for="meeting-title">Meeting Title:</label>
+    <input type="text" id="meeting-title" placeholder="Enter meeting title">
+
+    <h3>Minutes</h3>
+    <div id="minutes-section">
+        <!-- Dynamic content will go here -->
+    </div>
+
+    <button onclick="addMinute()">Add Minute</button>
+    <button onclick="downloadMinutes()">Download Minutes</button>
+
+    <script src="app.js"></script>
+</body>
+</html>
